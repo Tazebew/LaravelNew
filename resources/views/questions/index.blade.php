@@ -11,22 +11,24 @@
                         <thead>
                             <tr>
                                 <td>Title</td>
+                                <td>Creater Name</td>
+                                <td>Created Date</td>
                                 <td>Body</td>
                                 <td>Views</td>
                                 <td>Anwers</td>
                                 <td>Votes</td>
-                                <td>Creater</td>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($questions as $question)
                                 <tr>
-                                    <td>{{$question->title}}</td>
-                                    <td>{{str_limit($question->body, 250)}}</td>
+                                    <td><a href="{{$question->url}}">{{$question->title}}</a></td>
+                                    <td><a href="{{$question->user->url}}">{{$question->user->name}}</a></td>
+                                    <td>{{$question->created_date}}</td>
+                                    <td>{{str_limit($question->body, 150)}}</td>
                                     <td>{{$question->views}}</td>
                                     <td>{{$question->answers}}</td>
                                     <td>{{$question->votes}}</td>
-                                    <td>{{$question->user->name}}</td>
                                 </tr>
                             @endforeach
                         </tbody>

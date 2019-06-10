@@ -7,9 +7,9 @@ use Faker\Generator as Faker;
 
 $factory->define(Question::class, function (Faker $faker) {
     return [
-        $title='title'=>rtrim($faker->sentence(rand(5,10)),"."),
+        $title='title'=>rtrim($faker->sentence(rand(2,4)),"."),
         // 'slug'=>str_slug($title),
-        'body'=>$faker->paragraphs(rand(3,7),true),
+        'body'=>$faker->paragraphs(rand(2,5),true),
         'views'=>rand(0,10),
         'answers'=>rand(0,10),
         'votes'=>rand(-2,10),
