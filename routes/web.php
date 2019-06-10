@@ -26,6 +26,8 @@ Route::group(
         Auth::routes();
 
         Route::get('/home', 'HomeController@index')->name('home');
+
+        Route::resource('questions', 'QuestionsController');
     });
 
     /** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/
