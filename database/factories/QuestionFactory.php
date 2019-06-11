@@ -13,5 +13,6 @@ $factory->define(Question::class, function (Faker $faker) {
         'views'=>rand(0,10),
         'answers'=>rand(0,10),
         'votes'=>rand(-2,10),
+        'best_answer_id'=>rand(0,3),
     ];
 });
